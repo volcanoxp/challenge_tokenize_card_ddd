@@ -1,7 +1,8 @@
-import { APIGatewayEvent, Context } from "aws-lambda";
+import { APIGatewayEvent, Context, APIGatewayProxyResult } from "aws-lambda";
 
 
 export const generateToken = (event: APIGatewayEvent, context: Context) => {
+  const agua_ted = "dad";
   return {
     'hello': 'world'
   }
