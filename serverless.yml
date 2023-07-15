@@ -16,5 +16,11 @@ package:
     - node_modules/**/*
 
 functions:
-  function1:
-    handler: src/generate-token/generate-token.generateToken1
+  generateToken:
+    handler: src/generate-token/infrastructure/handlers/generate-token.generateToken
+    events:
+      - http:
+          path: tokens
+          method: post
+          cors: true
+

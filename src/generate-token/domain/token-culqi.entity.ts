@@ -9,7 +9,7 @@ export class TokenCulqi {
     tokenCulquiSchema.parse({ token });
   }
 
-  private static generateRandomString(): string {
+  private static _generateRandomString(): string {
     const characters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     let result = "";
     const length = 16;
@@ -23,7 +23,7 @@ export class TokenCulqi {
   }
 
   static generateToken(): TokenCulqi {
-    const token = this.generateRandomString();
+    const token = this._generateRandomString();
     return new TokenCulqi(token);
   }
 }
