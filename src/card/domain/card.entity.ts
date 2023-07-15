@@ -35,6 +35,8 @@ const cardSchema = z.object({
     .email(),
 })
 
+export type CardSchema = z.infer<typeof cardSchema>;
+
 export class Card {
   constructor (
     public cardNumber: string,
@@ -50,5 +52,15 @@ export class Card {
       expirationYear,
       email
     })
+  }
+
+  toObject(): CardSchema {
+    return {
+      cardNumber: this.cardNumber,
+      cvv: this.cvv,
+      expirationMonth: this.expirationMonth,
+      expirationYear: this.expirationYear,
+      email: this.email
+    }
   }
 }

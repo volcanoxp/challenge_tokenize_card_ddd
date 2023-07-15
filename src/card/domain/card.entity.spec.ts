@@ -1,9 +1,9 @@
 import { ZodError } from "zod";
-import { Card } from "./card.entity";
+import { Card, CardSchema } from "./card.entity";
 
 describe("Card Entity", () => {
   describe("Validate Constructor", () => {
-    let inputCard: Card
+    let inputCard: CardSchema
 
     beforeEach(() => {
       // Valid values

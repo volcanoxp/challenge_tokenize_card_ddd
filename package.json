@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "luhn": "^2.4.1",
+    "redis": "^4.6.7",
     "serverless": "^3.33.0",
     "zod": "^3.21.4"
   }
