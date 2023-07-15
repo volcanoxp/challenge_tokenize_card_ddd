@@ -8,7 +8,7 @@ export const messageOnlyDigits = "Only digits allowed";
 
 
 export const allowMonthDigits = (value: string): boolean => {
-  const month = parseInt(value)
+  const month = parseInt(value);
   if ( month > 0 && month <= 12) return true;
   return false;
 }

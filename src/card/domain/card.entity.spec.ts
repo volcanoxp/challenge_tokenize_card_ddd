@@ -44,7 +44,7 @@ describe("Card Entity", () => {
           inputCard.expirationMonth,
           inputCard.expirationYear,
           inputCard.email
-        )
+        );
       } catch (error) {
         expect(error).toBeInstanceOf(ZodError);
         expect(error.format().cardNumber).toBeDefined();
@@ -68,7 +68,7 @@ describe("Card Entity", () => {
           inputCard.expirationMonth,
           inputCard.expirationYear,
           inputCard.email
-        )
+        );
       } catch (error) {
         expect(error).toBeInstanceOf(ZodError);
         expect(error.format().cardNumber).toBeDefined();
@@ -92,7 +92,7 @@ describe("Card Entity", () => {
           inputCard.expirationMonth,
           inputCard.expirationYear,
           inputCard.email
-        )
+        );
       } catch (error) {
         expect(error).toBeInstanceOf(ZodError);
         expect(error.format().cardNumber).toBeDefined();
@@ -116,7 +116,7 @@ describe("Card Entity", () => {
           inputCard.expirationMonth,
           inputCard.expirationYear,
           inputCard.email
-        )
+        );
       } catch (error) {
         expect(error).toBeInstanceOf(ZodError);
         expect(error.format().cvv).toBeDefined();
@@ -140,7 +140,7 @@ describe("Card Entity", () => {
           inputCard.expirationMonth,
           inputCard.expirationYear,
           inputCard.email
-        )
+        );
       } catch (error) {
         expect(error).toBeInstanceOf(ZodError);
         expect(error.format().cvv).toBeDefined();
@@ -164,7 +164,7 @@ describe("Card Entity", () => {
           inputCard.expirationMonth,
           inputCard.expirationYear,
           inputCard.email
-        )
+        );
       } catch (error) {
         expect(error).toBeInstanceOf(ZodError);
         expect(error.format().expirationMonth).toBeDefined();
@@ -188,7 +188,7 @@ describe("Card Entity", () => {
           inputCard.expirationMonth,
           inputCard.expirationYear,
           inputCard.email
-        )
+        );
       } catch (error) {
         expect(error).toBeInstanceOf(ZodError);
         expect(error.format().expirationMonth).toBeDefined();
@@ -212,7 +212,7 @@ describe("Card Entity", () => {
           inputCard.expirationMonth,
           inputCard.expirationYear,
           inputCard.email
-        )
+        );
       } catch (error) {
         expect(error).toBeInstanceOf(ZodError);
         expect(error.format().expirationMonth).toBeDefined();
@@ -236,7 +236,7 @@ describe("Card Entity", () => {
           inputCard.expirationMonth,
           inputCard.expirationYear,
           inputCard.email
-        )
+        );
       } catch (error) {
         expect(error).toBeInstanceOf(ZodError);
         expect(error.format().expirationYear).toBeDefined();
@@ -260,7 +260,7 @@ describe("Card Entity", () => {
           inputCard.expirationMonth,
           inputCard.expirationYear,
           inputCard.email
-        )
+        );
       } catch (error) {
         expect(error).toBeInstanceOf(ZodError);
         expect(error.format().expirationYear).toBeDefined();
@@ -296,7 +296,7 @@ describe("Card Entity", () => {
           inputCard.expirationMonth,
           inputCard.expirationYear,
           inputCard.email
-        )
+        );
       } catch (error) {
         expect(error).toBeInstanceOf(ZodError);
         expect(error.format().expirationYear).toBeDefined();
@@ -320,7 +320,7 @@ describe("Card Entity", () => {
           inputCard.expirationMonth,
           inputCard.expirationYear,
           inputCard.email
-        )
+        );
       } catch (error) {
         expect(error).toBeInstanceOf(ZodError);
         expect(error.format().expirationYear).toBeDefined();
@@ -344,7 +344,7 @@ describe("Card Entity", () => {
           inputCard.expirationMonth,
           inputCard.expirationYear,
           inputCard.email
-        )
+        );
       } catch (error) {
         expect(error).toBeInstanceOf(ZodError);
         expect(error.format().email).toBeDefined();

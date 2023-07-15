@@ -4,7 +4,7 @@ describe("TokenCulqi Entity", () => {
   describe("Validate Constructor", () => {
     it("should create TokenCulqi with token valid", () => {
       const token = "abcd123adcDwe21W";
-      const tokenCulqi = new TokenCulqi(token)
+      const tokenCulqi = new TokenCulqi(token);
 
       expect(tokenCulqi.token).toBe(token);
     })
