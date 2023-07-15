@@ -1,0 +1,20 @@
+service: challenge-culqi
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+package:
+  include:
+    src/**/!(*.spec).js
+  exclude:
+    - node_modules/**/*
+
+functions:
+  function1:
+    handler: src/generate-token/generate-token.generateToken1
