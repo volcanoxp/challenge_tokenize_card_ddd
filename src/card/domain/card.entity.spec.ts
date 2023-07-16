@@ -8,11 +8,11 @@ describe("Card Entity", () => {
     beforeEach(() => {
       // Valid values
       inputCard = {
-        cardNumber: '4111111111111111',
-        cvv: '1234',
-        expirationMonth: '12',
+        cardNumber: "4111111111111111",
+        cvv: "1234",
+        expirationMonth: "12",
         expirationYear: String(new Date().getFullYear()),
-        email: 'test@gmail.com'
+        email: "test@gmail.com"
       };
     })
 

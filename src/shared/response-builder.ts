@@ -10,7 +10,7 @@ export class ResponseBuilder {
   }
 
   public static internalServerError(_error: Error): ApiResponse {
-    const errorResult: InternalServerErrorResult = new InternalServerErrorResult(ErrorCode.GeneralError, 'Sorry...');
+    const errorResult: InternalServerErrorResult = new InternalServerErrorResult(ErrorCode.GeneralError, 'Internal Server Error, Retry');
     return ResponseBuilder._returnAs<InternalServerErrorResult>(errorResult, HttpStatusCode.InternalServerError);
   }
 
