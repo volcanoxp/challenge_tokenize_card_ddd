@@ -18,9 +18,11 @@ package:
 functions:
   verifyToken:
     handler: src/auth/infrastructure/handlers/auth.verifyToken
+    description: validate Bearer token with format pk
 
   generateToken:
     handler: src/generate-token/infrastructure/handlers/generate-token.generateToken
+    description: generate token for save card
     events:
       - http:
           path: tokens
@@ -31,6 +33,7 @@ functions:
 
   getCard:
     handler: src/card/infrastructure/handlers/card.getCard
+    description: return public information of card
     events:
       - http:
           path: card/token/{token}

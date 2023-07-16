@@ -1,7 +1,5 @@
-// import { APIGatewayEvent, Context, APIGatewayProxyResult } from "aws-lambda";
 import { AuthService } from "../../application/auth.service";
 import { EffectPolicy } from "../../../shared/api.interface";
-// import { ResponseBuilder } from "../../../shared/response-builder";
 
 export class AuthController {
   public constructor (private readonly authService: AuthService) {}

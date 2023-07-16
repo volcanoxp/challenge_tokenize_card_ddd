@@ -2,7 +2,8 @@ import { createClient, RedisClientType } from 'redis';
 import { TokenCulqi } from "../../../generate-token/domain/token-culqi.entity";
 import { CardRepository } from "../../domain/card.repository";
 import { Card } from "../../domain/card.entity";
-
+import { BadRequestResult } from '../../../shared/errors';
+import { ErrorCode } from '../../../shared/error-codes';
 export class CardRedisRepository implements CardRepository {
   client: RedisClientType
   constructor () {
@@ -30,7 +31,9 @@ export class CardRedisRepository implements CardRepository {
     await this.client.connect();
 
     const cardObject = await this.client.hGetAll(token.token);
-
+    if (Object.keys(cardObject).length === 0) {
+      throw new BadRequestResult(ErrorCode.MissingToken, "No information found for the token");
+    }
     await this.client.disconnect();
 
     return new Card(
