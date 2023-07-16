@@ -18,7 +18,6 @@ export class ResponseBuilder {
     return ResponseBuilder._returnAs<T>(result, HttpStatusCode.Ok);
   }
 
-
   private static _returnAs<T>(result: T, statusCode: number): ApiResponse {
     const bodyObject: ErrorResponseBody | T = result instanceof ErrorResult
       ? { error: result }

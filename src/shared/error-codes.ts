@@ -4,5 +4,6 @@ export const ErrorCode = {
   InvalidName: 'INVALID_NAME',
   MissingEnv: 'MISSING_ENV',
   MissingId: 'MISSING_ID',
-  MissingPermission: 'MISSING_PERMISSION'
+  MissingPermission: 'MISSING_PERMISSION',
+  InvalidInputData: 'INVALID_INPUT_DATA'
 };

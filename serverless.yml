@@ -16,6 +16,9 @@ package:
     - node_modules/**/*
 
 functions:
+  verifyToken:
+    handler: src/auth/infrastructure/handlers/auth.verifyToken
+
   generateToken:
     handler: src/generate-token/infrastructure/handlers/generate-token.generateToken
     events:
@@ -23,6 +26,8 @@ functions:
           path: tokens
           method: post
           cors: true
+          authorizer:
+            name: verifyToken
 
   getCard:
     handler: src/card/infrastructure/handlers/card.getCard
@@ -31,6 +36,8 @@ functions:
           path: card/token/{token}
           method: get
           cors: true
+          authorizer:
+            name: verifyToken
           request:
             parameters:
               paths:
