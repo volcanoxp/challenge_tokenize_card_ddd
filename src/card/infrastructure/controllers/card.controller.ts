@@ -7,7 +7,7 @@ import { ResponseBuilder } from "../../../shared/response-builder";
 export class CardController {
   public constructor(private readonly cardService: CardService) {}
 
-  public getCard = async (event: APIGatewayEvent, context: Context): Promise<APIGatewayProxyResult> => {
+  public getCard = async (event: APIGatewayEvent, _context: Context): Promise<APIGatewayProxyResult> => {
 
     const { token } = event.pathParameters as TokenSchema;
 

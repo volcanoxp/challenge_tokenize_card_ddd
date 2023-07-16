@@ -7,7 +7,7 @@ import { ResponseGenerateToken } from "../../application/generate-token.interfac
 export class GenerateTokenController {
   public constructor (private readonly generateTokenService: GenerateTokenService) {}
 
-  public generateToken = async (event: APIGatewayEvent, context: Context): Promise<APIGatewayProxyResult> => {
+  public generateToken = async (event: APIGatewayEvent, _context: Context): Promise<APIGatewayProxyResult> => {
 
     const cardData: CardSchema = JSON.parse(event.body as string);
 
