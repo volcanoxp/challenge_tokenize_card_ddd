@@ -24,3 +24,15 @@ functions:
           method: post
           cors: true
 
+  getCard:
+    handler: src/card/infrastructure/handlers/card.getCard
+    events:
+      - http:
+          path: card/token/{token}
+          method: get
+          cors: true
+          request:
+            parameters:
+              paths:
+                token: true
+

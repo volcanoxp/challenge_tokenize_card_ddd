@@ -36,6 +36,7 @@ const cardSchema = z.object({
 })
 
 export type CardSchema = z.infer<typeof cardSchema>;
+export type CardPublic = Omit<CardSchema, "cvv">;
 
 export class Card {
   constructor (
@@ -58,6 +59,19 @@ export class Card {
     return {
       cardNumber: this.cardNumber,
       cvv: this.cvv,
+      expirationMonth: this.expirationMonth,
+      expirationYear: this.expirationYear,
+      email: this.email
+    }
+  }
+
+  static validateSchema(cardData: CardSchema): void {
+    cardSchema.parse(cardData);
+  }
+
+  getPublicCard(): CardPublic {
+    return {
+      cardNumber: this.cardNumber,
       expirationMonth: this.expirationMonth,
       expirationYear: this.expirationYear,
       email: this.email

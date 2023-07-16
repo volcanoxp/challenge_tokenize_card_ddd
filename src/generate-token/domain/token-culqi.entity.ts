@@ -4,6 +4,7 @@ const tokenCulquiSchema = z.object({
   token: z.string().length(16)
 });
 
+export type TokenSchema = z.infer<typeof tokenCulquiSchema>;
 export class TokenCulqi {
   constructor (public token: string) {
     tokenCulquiSchema.parse({ token });
