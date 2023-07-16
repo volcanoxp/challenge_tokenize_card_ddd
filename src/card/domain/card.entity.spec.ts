@@ -351,5 +351,17 @@ describe("Card Entity", () => {
       }
     })
 
+    it("should not return cvv with method getPublicCard", () => {
+      const card = new Card(
+        inputCard.cardNumber,
+        inputCard.cvv,
+        inputCard.expirationMonth,
+        inputCard.expirationYear,
+        inputCard.email
+      );
+      const cardPublic = card.getPublicCard();
+      expect(cardPublic).not.toHaveProperty('cvv');
+    })
+
   })
 })

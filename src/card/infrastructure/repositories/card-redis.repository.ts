@@ -21,6 +21,7 @@ export class CardRedisRepository implements CardRepository {
     await this.client.connect();
 
     await this.client.hSet(token.token, cardObject);
+    await this.client.expire(token.token, 15 * 60);
 
     await this.client.disconnect();
   }
