@@ -1,10 +1,10 @@
 import { AuthService } from "../../application/auth.service";
-import { EffectPolicy } from "../../../shared/api.interface";
+import { EffectPolicy, GuardResponse } from "../../../shared/api.interface";
 
 export class AuthController {
   public constructor (private readonly authService: AuthService) {}
 
-  public verifyToken = async (event: any): Promise<any> => {
+  public verifyToken = async (event: any): Promise<GuardResponse> => {
     try {
       const { Authorization: authToken } = event.headers
 
@@ -17,7 +17,7 @@ export class AuthController {
     }
   }
 
-  private _generatePolicy(principalId: string, effect: EffectPolicy,  methodArn: string) {
+  private _generatePolicy(principalId: string, effect: EffectPolicy,  methodArn: string): GuardResponse {
     return {
       principalId,
       policyDocument: {
