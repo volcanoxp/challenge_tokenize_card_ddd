@@ -23,6 +23,10 @@ functions:
   generateToken:
     handler: src/generate-token/infrastructure/handlers/generate-token.generateToken
     description: generate token for save card
+    environment:
+      REDIS_HOST: localhost
+      REDIS_PORT: 6379
+      REDIS_PASSWORD: r3d1s_3E2
     events:
       - http:
           path: tokens
@@ -34,6 +38,10 @@ functions:
   getCard:
     handler: src/card/infrastructure/handlers/card.getCard
     description: return public information of card
+    environment:
+      REDIS_HOST: localhost
+      REDIS_PORT: 6379
+      REDIS_PASSWORD: r3d1s_3E2
     events:
       - http:
           path: card/token/{token}
