@@ -1,72 +1,49 @@
-<!--
-title: 'AWS NodeJS Example'
-description: 'This template demonstrates how to deploy a NodeJS function running on AWS Lambda using the traditional Serverless Framework.'
-layout: Doc
-framework: v3
-platform: AWS
-language: nodeJS
-priority: 1
-authorLink: 'https://github.com/serverless'
-authorName: 'Serverless, inc.'
-authorAvatar: 'https://avatars1.githubusercontent.com/u/13742415?s=200&v=4'
--->
+# Implementation of the Card Tokenization project
 
+## **Usage**
 
-# Serverless Framework AWS NodeJS Example
+### **Technologies**
+1. [Docker Compose](https://docs.docker.com/compose/)
+2. [NodeJs V18.16.0](https://nodejs.org/es)
+3. [TypeScript](https://www.typescriptlang.org/)
+4. [Redis](https://redis.io/)
+5. [Serverless](https://www.serverless.com/)
 
-This template demonstrates how to deploy a NodeJS function running on AWS Lambda using the traditional Serverless Framework. The deployed function does not include any event definitions as well as any kind of persistence (database). For more advanced configurations check out the [examples repo](https://github.com/serverless/examples/) which includes integrations with SQS, DynamoDB or examples of functions that are triggered in `cron`-like manner. For details about configuration of specific `events`, please refer to our [documentation](https://www.serverless.com/framework/docs/providers/aws/events/).
-
-## Usage
-
-### Deployment
-
-In order to deploy the example, you need to run the following command:
-
+### **Steps for local development**
+1. Install redis database
 ```
-$ serverless deploy
+docker-compose up -d
+```
+2. Install dependencies
+```
+npm install
+```
+3. Run and start to test apis
+```
+npm run start
 ```
 
-After running deploy, you should see output similar to:
-
-```bash
-Deploying aws-node-project to stage dev (us-east-1)
-
-✔ Service deployed to stack aws-node-project-dev (112s)
-
-functions:
-  hello: aws-node-project-dev-hello (1.5 kB)
+### **Extra commands**
+1. Run test
+```
+npm run test
+```
+2. Verify linter
+```
+npm run lint
 ```
 
-### Invocation
+## API Endpoints
 
-After successful deployment, you can invoke the deployed function by using the following command:
+List of available routes:
 
-```bash
-serverless invoke --function hello
-```
+**Routes**:\
+`POST /tokens` - Generate a token with the card information\
+`GET /card/token/:token` - Gets the information of the card with the token\
 
-Which should result in response similar to the following:
 
-```json
-{
-    "statusCode": 200,
-    "body": "{\n  \"message\": \"Go Serverless v3.0! Your function executed successfully!\",\n  \"input\": {}\n}"
-}
-```
+- comments: A bearer token must be used for all requests e.g. **pk_test_123455**
 
-### Local development
+### **API POSTMAN DOCUMENTACION / EXAMPLES**
 
-You can invoke your function locally by using the following command:
-
-```bash
-serverless invoke local --function hello
-```
-
-Which should result in response similar to the following:
-
-```
-{
-    "statusCode": 200,
-    "body": "{\n  \"message\": \"Go Serverless v3.0! Your function executed successfully!\",\n  \"input\": \"\"\n}"
-}
-```
+https://documenter.getpostman.com/view/11308127/2s946fetEC
