@@ -4,7 +4,7 @@ import { AuthController } from "./auth.controller";
 describe("AuthController", () => {
   const authService = new AuthService();
   const authController = new AuthController(authService);
-  let eventInput = {
+  const eventInput = {
     headers: {
       Authorization: "Bearer pk_test_1234567a"
     }
