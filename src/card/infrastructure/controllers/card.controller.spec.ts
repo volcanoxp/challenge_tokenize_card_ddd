@@ -57,7 +57,6 @@ describe("CardController", () => {
       token: "1235"
     }
     const response = await cardController.getCard(event, context);
-
     const body: ErrorResponseBody = JSON.parse(response.body);
 
     expect(response.statusCode).toBe(HttpStatusCode.BadRequest);
@@ -76,7 +75,6 @@ describe("CardController", () => {
       );
 
     const response = await cardController.getCard(event, context);
-
     const body: ErrorResponseBody = JSON.parse(response.body);
 
     expect(response.statusCode).toBe(HttpStatusCode.BadRequest);
