@@ -39,7 +39,7 @@ List of available routes:
 
 **Routes**:\
 `POST /tokens` - Generate a token with the card information\
-`GET /card/token/:token` - Gets the information of the card with the token\
+`GET /card/token/:token` - Gets the information of the card with the token
 
 
 - comments: A bearer token must be used for all requests e.g. **pk_test_123455**
